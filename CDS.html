@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de la página</title>
+    <link rel="stylesheet" href="diseniovinilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+ <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Beat<span>Box</span></a>
+            <nav>
+                <ul>
+                    <li><a href="paginaweb.html">Inicio</a></li>
+                    <li><a href="paginaweb.html">Colaboladores</a></li>               
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#" class="btn">Únete ahora</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+<h2>Productos</h2>
+
+
+ <div class="classes-grid">
+  
+
+
+  
+  <form id="formulario-tienda" onsubmit="enviarAlCarrito(event)">
+    <div class="tienda">
+
+      <div class="producto">
+        <img src="https://http2.mlstatic.com/D_Q_NP_744172-MLU74448866197_022024-O.webp" alt="Playera">
+        <label><input type="checkbox" name="productos" value="Playera">My Chemical Romance </label>
+      </div>
+
+      <div class="producto">
+        <img src="https://i.ebayimg.com/images/g/z~MAAOSwRSRkXClf/s-l1200.jpg" alt="Gorra">
+        <label><input type="checkbox" name="productos" value="Gorra"> My Chemical Romance</label>
+      </div>
+
+      <div class="producto">
+        <img src="https://http2.mlstatic.com/D_Q_NP_665513-MLU78331778474_082024-O.webp" alt="Sudadera">
+        <label><input type="checkbox" name="productos" value="Sudadera"> Peso Pluma Genesis</label>
+      </div>
+
+
+      <div class="producto">
+        <img src="https://m.media-amazon.com/images/I/71x4A6UKjyL._UF1000,1000_QL80_.jpg" alt="Playera">
+        <label><input type="checkbox" name="productos" value="Playera">TWICE </label>
+      </div>
+
+    
+    </div>
+
+    <button type="submit" class="btn-enviar">Enviar al carrito</button>
+    <div id="carrito-msg">¡Productos enviados al carrito!</div>
+  </form>
+
+  <script>
+    function enviarAlCarrito(event) {
+      event.preventDefault();
+
+      const seleccionados = Array.from(document.querySelectorAll('input[name="productos"]:checked'))
+        .map(p => p.value);
+
+      if (seleccionados.length === 0) {
+        alert("Selecciona al menos un producto.");
+        return;
+      }
+
+      console.log("Productos al carrito:", seleccionados);
+      document.getElementById("carrito-msg").style.display = "block";
+    }
+  </script>
+
+
+  </body>
+</html>
